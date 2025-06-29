@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>99,49 Store – India’s Budget Bazaar</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>99,49 Store - Budget Deals Like Never Before</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; }
     .hover-zoom img { transition: transform 0.3s ease; }
-    .hover-zoom:hover img { transform: scale(1.07); }
+    .hover-zoom:hover img { transform: scale(1.05); }
   </style>
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-white text-gray-800">
 
   <!-- Header -->
   <header class="bg-white shadow sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto flex items-center justify-between py-3 px-4">
-      <div class="text-2xl font-bold text-blue-700">99,49 Store</div>
-      <input type="text" placeholder="Search for products, brands and more..." class="border border-gray-300 px-4 py-1 rounded-full w-1/2 text-sm" />
+    <div class="max-w-7xl mx-auto flex items-center justify-between py-4 px-4">
+      <div class="text-2xl font-extrabold text-blue-700">99,49 Store</div>
+      <input type="text" placeholder="Search for products..." class="border border-gray-300 px-4 py-2 rounded-full w-1/2 text-sm" />
       <div class="flex gap-4 text-sm">
         <a href="#" class="hover:text-blue-600">Cart 🛒</a>
         <a href="#" class="hover:text-blue-600">Login 🔐</a>
@@ -26,15 +26,20 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-yellow-400 to-orange-500 py-16 text-white text-center">
-    <h1 class="text-5xl font-bold mb-4">Mega Budget Sale on 99,49 Store</h1>
-    <p class="text-lg mb-6">Get the best picks in ₹49, ₹99, and ₹149 — Daily Deals!</p>
-    <a href="#products" class="bg-white text-orange-600 px-6 py-2 rounded-full font-semibold shadow hover:scale-105 transition">Shop Now</a>
+  <!-- Hero Banner with Ecommerce Background -->
+  <section class="relative bg-cover bg-center bg-no-repeat py-20 text-white" style="background-image: url('https://i.imgur.com/3U0K8Xs.jpg');">
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center md:text-left">
+      <div class="md:w-1/2">
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight">Mega Budget Sale on 99,49 Store</h1>
+        <p class="text-lg mt-3">Get the best picks in ₹49, ₹99, and ₹149 — Daily Deals!</p>
+        <a href="#products" class="mt-6 inline-block bg-yellow-400 text-black font-semibold px-6 py-2 rounded-full shadow hover:bg-yellow-300 transition">Shop Now</a>
+      </div>
+    </div>
   </section>
 
   <!-- Price Filters -->
-  <section class="py-6 bg-gray-100 text-center">
+  <section class="bg-gray-100 py-6 text-center">
     <h2 class="text-2xl font-bold mb-4">Shop by Price</h2>
     <div class="flex justify-center gap-4">
       <button class="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700">₹49</button>
@@ -47,58 +52,63 @@
   <section id="products" class="py-12 px-4 max-w-7xl mx-auto">
     <h2 class="text-2xl font-bold text-center mb-8">Best Budget Deals</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
       <!-- Product Card -->
       <div class="bg-white rounded-xl border shadow hover:shadow-lg hover-zoom overflow-hidden">
-        <img src="https://via.placeholder.com/400x250" alt="Product" class="w-full h-48 object-cover">
+        <img src="https://i.imgur.com/O1ZyZ9Z.jpg" alt="Product" class="w-full h-48 object-cover">
         <div class="p-4">
-          <h3 class="font-semibold text-lg">Printed Cotton T-shirt</h3>
+          <h3 class="font-semibold text-lg">Classic Cotton T-shirt</h3>
           <div class="flex items-center justify-between text-sm mt-1">
             <span class="text-green-600 font-bold">₹99</span>
-            <span class="bg-orange-200 text-orange-800 px-2 py-1 rounded-full text-xs">Best Seller</span>
+            <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs">4.3 ⭐ (1,032)</span>
           </div>
-          <div class="flex justify-between items-center mt-3">
+          <div class="mt-3">
             <button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Add to Cart</button>
           </div>
         </div>
       </div>
 
       <div class="bg-white rounded-xl border shadow hover:shadow-lg hover-zoom overflow-hidden">
-        <img src="https://via.placeholder.com/400x250" alt="Product" class="w-full h-48 object-cover">
+        <img src="https://i.imgur.com/sAlHxK0.jpg" alt="Product" class="w-full h-48 object-cover">
         <div class="p-4">
-          <h3 class="font-semibold text-lg">Digital Wrist Watch</h3>
+          <h3 class="font-semibold text-lg">Bluetooth Neckband Earphones</h3>
           <div class="flex items-center justify-between text-sm mt-1">
             <span class="text-green-600 font-bold">₹149</span>
-            <span class="bg-yellow-200 text-yellow-800 px-2 py-1 rounded-full text-xs">Trending</span>
+            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs">Top Pick ⭐</span>
           </div>
-          <button class="mt-3 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Add to Cart</button>
+          <div class="mt-3">
+            <button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Add to Cart</button>
+          </div>
         </div>
       </div>
 
       <div class="bg-white rounded-xl border shadow hover:shadow-lg hover-zoom overflow-hidden">
-        <img src="https://via.placeholder.com/400x250" alt="Product" class="w-full h-48 object-cover">
+        <img src="https://i.imgur.com/UtjcNqx.jpg" alt="Product" class="w-full h-48 object-cover">
         <div class="p-4">
-          <h3 class="font-semibold text-lg">Bluetooth Earphones</h3>
+          <h3 class="font-semibold text-lg">Premium Socks Pack (Set of 3)</h3>
           <div class="flex items-center justify-between text-sm mt-1">
             <span class="text-green-600 font-bold">₹49</span>
-            <span class="bg-red-200 text-red-800 px-2 py-1 rounded-full text-xs">₹49 Deal</span>
+            <span class="bg-red-100 text-red-700 px-2 py-1 rounded-full text-xs">🔥 ₹49 Deal</span>
           </div>
-          <button class="mt-3 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Add to Cart</button>
+          <div class="mt-3">
+            <button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Add to Cart</button>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Testimonials -->
-  <section class="bg-white py-12">
-    <h2 class="text-2xl font-bold text-center mb-6">What Our Customers Say</h2>
+  <section class="bg-gray-50 py-12">
+    <h2 class="text-2xl font-bold text-center mb-6">Customers Love Us ❤️</h2>
     <div class="text-center max-w-xl mx-auto text-gray-700">
-      <p>"I was shocked at the quality for these prices! I’m buying more next week!"</p>
-      <p class="mt-2 font-semibold">– Aman K., Hyderabad</p>
+      <p class="italic">"Insane deals for such quality. Got a watch, t-shirt and socks under ₹300!"</p>
+      <p class="mt-2 font-semibold">– Sneha R., Bengaluru</p>
     </div>
   </section>
 
-  <!-- Contact Info -->
-  <section class="bg-gray-100 py-10 text-center">
+  <!-- Contact -->
+  <section class="bg-white py-10 text-center">
     <h2 class="text-xl font-bold mb-2">Need Assistance?</h2>
     <p>Email: <a href="mailto:support@9949store.in" class="text-blue-600">support@9949store.in</a></p>
     <p>WhatsApp: <a href="https://wa.me/919999994949" class="text-green-600">+91 99999 94949</a></p>
@@ -106,7 +116,7 @@
 
   <!-- Footer -->
   <footer class="bg-gray-900 text-white text-sm text-center py-6">
-    <p>© 2025 99,49 Store – India’s Budget Bazaar. All rights reserved.</p>
+    <p>© 2025 99,49 Store – India's Budget Bazaar. All rights reserved.</p>
   </footer>
 
 </body>
