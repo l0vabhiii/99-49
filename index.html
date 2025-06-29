@@ -1,117 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>99,49 Store – Budget Shopping</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.1" />
+  <title>99,49 Store - Budget Deals</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body { font-family: 'Segoe UI', sans-serif; }
+    .badge { font-size: 0.7rem; font-weight: bold; padding: 2px 6px; border-radius: 9999px; }
   </style>
 </head>
 <body class="bg-white text-gray-800">
 
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-yellow-300 to-red-400 py-10 text-center text-white">
-    <h1 class="text-5xl font-bold mb-2">Welcome to 99,49</h1>
-    <p class="text-lg mb-4">Where Everything is ₹49, ₹99, or ₹149!</p>
-    <button class="bg-white text-red-600 px-6 py-2 rounded-full font-semibold hover:scale-105 transition">Start Shopping</button>
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="text-2xl font-bold text-blue-700">99,49 Store</div>
+      <input type="text" placeholder="Search products..." class="border rounded px-3 py-1 w-full max-w-md mx-4 text-sm">
+      <div class="flex gap-4 text-sm">
+        <a href="#" class="hover:text-blue-600">Cart 🛒</a>
+        <a href="#" class="hover:text-blue-600">Login 🔐</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="bg-gradient-to-r from-yellow-300 to-orange-400 py-10 text-center text-white">
+    <h1 class="text-4xl sm:text-5xl font-bold mb-2">Big Savings Everyday!</h1>
+    <p class="text-lg mb-4">Shop ₹49, ₹99, and ₹149 Deals – Only on 99,49 Store</p>
+    <button class="bg-white text-orange-600 px-6 py-2 rounded-full font-semibold hover:scale-105 transition">Start Shopping</button>
   </section>
 
-  <!-- Price Filter -->
-  <section class="py-8 text-center bg-gray-100">
-    <h2 class="text-2xl font-bold mb-6">Shop by Price</h2>
-    <div class="flex justify-center gap-4">
-      <span class="bg-red-500 text-white px-4 py-2 rounded-full font-bold">₹49</span>
-      <span class="bg-yellow-500 text-white px-4 py-2 rounded-full font-bold">₹99</span>
-      <span class="bg-green-500 text-white px-4 py-2 rounded-full font-bold">₹149</span>
+  <!-- Price Filters -->
+  <section class="bg-gray-50 py-6 text-center">
+    <h2 class="text-xl font-bold mb-4">Shop by Price</h2>
+    <div class="flex justify-center gap-3">
+      <span class="bg-red-500 text-white px-4 py-1 rounded-full font-semibold">₹49</span>
+      <span class="bg-yellow-500 text-white px-4 py-1 rounded-full font-semibold">₹99</span>
+      <span class="bg-green-500 text-white px-4 py-1 rounded-full font-semibold">₹149</span>
     </div>
   </section>
 
-  <!-- Product Section with DEMO Items -->
-  <section class="py-10 px-4">
-    <h2 class="text-2xl font-bold text-center mb-6">Explore Products (Demo)</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-      
-      <!-- DEMO Product 1 -->
-      <div class="bg-white shadow-md rounded-xl overflow-hidden border border-dashed border-red-400">
-        <img src="https://via.placeholder.com/300x200" alt="Demo Product" class="w-full h-40 object-cover opacity-80">
+  <!-- Product Grid -->
+  <section class="py-10 px-4 max-w-7xl mx-auto">
+    <h2 class="text-2xl font-bold mb-6 text-center">Top Deals (Demo Products)</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+      <!-- Product 1 -->
+      <div class="bg-white shadow-md border rounded-lg overflow-hidden hover:shadow-lg transition">
+        <img src="https://via.placeholder.com/300x200" class="w-full h-48 object-cover">
         <div class="p-4">
-          <span class="text-xs bg-red-200 text-red-800 px-2 py-1 rounded-full mb-2 inline-block">#Demo</span>
-          <h3 class="font-semibold text-lg">Demo T-shirt</h3>
-          <p class="text-green-600 font-bold">₹99</p>
-          <button class="mt-2 w-full bg-gray-300 text-gray-600 py-1 rounded cursor-not-allowed">Preview Only</button>
+          <h3 class="font-semibold text-lg mb-1">Demo T-shirt</h3>
+          <div class="flex items-center justify-between">
+            <span class="text-green-600 font-bold">₹99</span>
+            <span class="bg-orange-200 text-orange-800 badge">Best Seller</span>
+          </div>
+          <button class="mt-3 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Buy Now</button>
         </div>
       </div>
 
-      <!-- DEMO Product 2 -->
-      <div class="bg-white shadow-md rounded-xl overflow-hidden border border-dashed border-red-400">
-        <img src="https://via.placeholder.com/300x200" alt="Demo Product" class="w-full h-40 object-cover opacity-80">
+      <!-- Product 2 -->
+      <div class="bg-white shadow-md border rounded-lg overflow-hidden hover:shadow-lg transition">
+        <img src="https://via.placeholder.com/300x200" class="w-full h-48 object-cover">
         <div class="p-4">
-          <span class="text-xs bg-red-200 text-red-800 px-2 py-1 rounded-full mb-2 inline-block">#Demo</span>
-          <h3 class="font-semibold text-lg">Demo Watch</h3>
-          <p class="text-green-600 font-bold">₹149</p>
-          <button class="mt-2 w-full bg-gray-300 text-gray-600 py-1 rounded cursor-not-allowed">Preview Only</button>
+          <h3 class="font-semibold text-lg mb-1">Demo Watch</h3>
+          <div class="flex items-center justify-between">
+            <span class="text-green-600 font-bold">₹149</span>
+            <span class="bg-yellow-200 text-yellow-800 badge">Top Pick</span>
+          </div>
+          <button class="mt-3 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Buy Now</button>
         </div>
       </div>
 
-      <!-- DEMO Product 3 -->
-      <div class="bg-white shadow-md rounded-xl overflow-hidden border border-dashed border-red-400">
-        <img src="https://via.placeholder.com/300x200" alt="Demo Product" class="w-full h-40 object-cover opacity-80">
+      <!-- Product 3 -->
+      <div class="bg-white shadow-md border rounded-lg overflow-hidden hover:shadow-lg transition">
+        <img src="https://via.placeholder.com/300x200" class="w-full h-48 object-cover">
         <div class="p-4">
-          <span class="text-xs bg-red-200 text-red-800 px-2 py-1 rounded-full mb-2 inline-block">#Demo</span>
-          <h3 class="font-semibold text-lg">Demo Earphones</h3>
-          <p class="text-green-600 font-bold">₹49</p>
-          <button class="mt-2 w-full bg-gray-300 text-gray-600 py-1 rounded cursor-not-allowed">Preview Only</button>
+          <h3 class="font-semibold text-lg mb-1">Demo Earphones</h3>
+          <div class="flex items-center justify-between">
+            <span class="text-green-600 font-bold">₹49</span>
+            <span class="bg-red-200 text-red-800 badge">₹49 Deal</span>
+          </div>
+          <button class="mt-3 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Buy Now</button>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- Why Choose Us -->
-  <section class="bg-gray-50 py-10 px-4">
-    <h2 class="text-2xl font-bold text-center mb-6">Why Shop With Us?</h2>
+  <!-- Why Us -->
+  <section class="bg-gray-100 py-10 px-4">
+    <h2 class="text-2xl font-bold text-center mb-6">Why Choose 99,49?</h2>
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center max-w-5xl mx-auto">
       <div>
-        <div class="text-4xl text-red-500 mb-2">💰</div>
-        <h4 class="font-semibold">Budget Friendly</h4>
-        <p>Everything under ₹149 — No surprises!</p>
+        <div class="text-4xl text-green-500 mb-2">✅</div>
+        <h4 class="font-semibold">Verified Quality</h4>
+        <p>Only trusted & curated items</p>
       </div>
       <div>
-        <div class="text-4xl text-green-500 mb-2">⚡</div>
+        <div class="text-4xl text-blue-500 mb-2">🚚</div>
         <h4 class="font-semibold">Fast Delivery</h4>
-        <p>Quick shipping all across India</p>
+        <p>Ships across India within 3-5 days</p>
       </div>
       <div>
-        <div class="text-4xl text-yellow-500 mb-2">🛒</div>
-        <h4 class="font-semibold">Curated Products</h4>
-        <p>Only high-quality budget picks</p>
+        <div class="text-4xl text-yellow-500 mb-2">💸</div>
+        <h4 class="font-semibold">Lowest Prices</h4>
+        <p>Best deals under ₹149 — always!</p>
       </div>
     </div>
   </section>
 
   <!-- Testimonials -->
   <section class="bg-white py-10 px-4">
-    <h2 class="text-2xl font-bold text-center mb-6">What Our Customers Say</h2>
-    <div class="max-w-4xl mx-auto text-center text-gray-600">
-      <p>“Amazing products at unbeatable prices. Loved the packaging and delivery!”</p>
-      <p class="mt-2 font-semibold text-gray-800">– Priya S, Mumbai</p>
+    <h2 class="text-2xl font-bold text-center mb-6">What People Say</h2>
+    <div class="max-w-3xl mx-auto text-center text-gray-600">
+      <p>"I bought 5 items for under ₹500. Perfect for gifting!"</p>
+      <p class="mt-2 font-semibold text-gray-800">– Aarti R., Delhi</p>
     </div>
   </section>
 
   <!-- Contact -->
-  <section class="bg-gray-100 py-10 px-4">
-    <h2 class="text-2xl font-bold text-center mb-6">Contact Us</h2>
-    <div class="text-center">
-      <p>Email: <a href="mailto:support@9949store.in" class="text-blue-600">support@9949store.in</a></p>
-      <p>WhatsApp: <a href="https://wa.me/919999994949" class="text-green-600">+91 99999 94949</a></p>
-    </div>
+  <section class="bg-gray-100 py-10 px-4 text-center">
+    <h2 class="text-2xl font-bold mb-4">Need Help?</h2>
+    <p>Email us at: <a href="mailto:support@9949store.in" class="text-blue-600">support@9949store.in</a></p>
+    <p>WhatsApp: <a href="https://wa.me/919999994949" class="text-green-600">+91 99999 94949</a></p>
   </section>
 
   <!-- Footer -->
   <footer class="bg-gray-900 text-white py-6 text-center text-sm">
-    <p>© 2025 99,49 Store. All rights reserved.</p>
+    <p>© 2025 99,49 Store. Powered by Creators. All rights reserved.</p>
   </footer>
 
 </body>
