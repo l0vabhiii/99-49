@@ -1,78 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Developer Panel - 99,49 Store</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>99,49 Store – India's Budget Bazaar</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body { font-family: 'Inter', sans-serif; }
+    .hover-zoom img { transition: transform 0.3s ease; }
+    .hover-zoom:hover img { transform: scale(1.05); }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
+<body class="bg-white text-gray-900">
 
-  <!-- Navbar -->
-  <nav class="bg-white shadow sticky top-0 z-50 p-4 flex justify-between items-center">
-    <h1 class="text-xl font-bold text-blue-600">99,49 Developer Panel</h1>
-    <button class="bg-red-500 text-white px-4 py-1 rounded hover:bg-red-600">Logout</button>
-  </nav>
-
-  <!-- Container -->
-  <div class="max-w-4xl mx-auto p-6">
-
-    <!-- Add Product Form -->
-    <div class="bg-white rounded-lg shadow p-6 mb-10">
-      <h2 class="text-2xl font-bold mb-4">Add New Product</h2>
-      <form id="addProductForm" class="grid grid-cols-1 gap-4">
-        <input type="text" placeholder="Product Name" class="border p-2 rounded" required>
-        <input type="text" placeholder="Image URL" class="border p-2 rounded" required>
-        <textarea placeholder="Product Description" class="border p-2 rounded"></textarea>
-        <input type="number" placeholder="Price (₹)" class="border p-2 rounded" required>
-        <select class="border p-2 rounded">
-          <option value="₹49">₹49</option>
-          <option value="₹99">₹99</option>
-          <option value="₹149">₹149</option>
-        </select>
-        <button type="submit" class="bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Add Product</button>
-      </form>
-    </div>
-
-    <!-- Product List -->
-    <div class="bg-white rounded-lg shadow p-6">
-      <h2 class="text-2xl font-bold mb-4">Product List (Demo)</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-
-        <!-- Product Card (Sample) -->
-        <div class="bg-gray-50 border rounded-lg overflow-hidden shadow">
-          <img src="https://i.imgur.com/W1YyRrg.jpeg" alt="T-shirt" class="w-full h-40 object-cover">
-          <div class="p-4">
-            <h3 class="font-semibold">Cotton T-shirt</h3>
-            <p class="text-sm text-gray-600 mb-2">₹99 – Soft & breathable</p>
-            <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 text-sm">Delete</button>
-          </div>
-        </div>
-
-        <div class="bg-gray-50 border rounded-lg overflow-hidden shadow">
-          <img src="https://i.imgur.com/5rVElvA.jpeg" alt="Earphones" class="w-full h-40 object-cover">
-          <div class="p-4">
-            <h3 class="font-semibold">Wireless Earphones</h3>
-            <p class="text-sm text-gray-600 mb-2">₹149 – Bluetooth 5.0</p>
-            <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 text-sm">Delete</button>
-          </div>
-        </div>
-
-        <div class="bg-gray-50 border rounded-lg overflow-hidden shadow">
-          <img src="https://i.imgur.com/mWTufO4.jpeg" alt="Mug" class="w-full h-40 object-cover">
-          <div class="p-4">
-            <h3 class="font-semibold">Coffee Mug</h3>
-            <p class="text-sm text-gray-600 mb-2">₹49 – Microwave safe</p>
-            <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 text-sm">Delete</button>
-          </div>
-        </div>
-
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between py-4 px-4">
+      <div class="text-2xl font-extrabold text-blue-700">99,49 Store</div>
+      <input type="text" placeholder="Search for products..." class="border border-gray-300 px-4 py-2 rounded-full w-1/2 text-sm" />
+      <div class="flex gap-4 text-sm">
+        <a href="#" class="hover:text-blue-600">Cart 🛒</a>
+        <a href="#" class="hover:text-blue-600">Login 🔐</a>
       </div>
     </div>
-  </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="relative bg-cover bg-center py-20 text-white" style="background-image: url('https://i.imgur.com/yB13r3h.jpg');">
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-6 text-center md:text-left">
+      <div class="md:w-1/2">
+        <h1 class="text-5xl font-bold">Deals Under ₹149</h1>
+        <p class="text-lg mt-3">Stationery, Gifts, Cutlery, Makeup & more</p>
+        <a href="#products" class="mt-5 inline-block bg-yellow-400 text-black px-6 py-2 rounded-full font-semibold shadow hover:bg-yellow-300">Shop Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Price Filters -->
+  <section class="py-6 bg-gray-50 text-center">
+    <h2 class="text-2xl font-bold mb-4">Browse by Price</h2>
+    <div class="flex justify-center gap-4">
+      <button class="bg-red-500 text-white px-4 py-2 rounded-full font-semibold">₹49</button>
+      <button class="bg-yellow-500 text-white px-4 py-2 rounded-full font-semibold">₹99</button>
+      <button class="bg-green-500 text-white px-4 py-2 rounded-full font-semibold">₹149</button>
+    </div>
+  </section>
+
+  <!-- Product Grid -->
+  <section id="products" class="py-12 px-4 max-w-7xl mx-auto">
+    <h2 class="text-2xl font-bold text-center mb-8">Top Budget Picks</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+      <!-- Product 1 -->
+      <div class="bg-white border shadow-sm rounded-xl hover:shadow-lg overflow-hidden hover-zoom">
+        <img src="https://i.imgur.com/W1YyRrg.jpeg" alt="T-shirt" class="w-full h-52 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg">Basic Cotton T-shirt</h3>
+          <p class="text-sm text-gray-500">Soft & breathable. Ideal for daily wear.</p>
+          <div class="flex justify-between items-center mt-2">
+            <span class="text-green-600 font-bold">₹99</span>
+            <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded-full">4.4 ⭐</span>
+          </div>
+          <button class="mt-3 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="bg-white border shadow-sm rounded-xl hover:shadow-lg overflow-hidden hover-zoom">
+        <img src="https://i.imgur.com/5rVElvA.jpeg" alt="Headphones" class="w-full h-52 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg">Wireless Earphones</h3>
+          <p class="text-sm text-gray-500">Long battery + Bluetooth 5.0</p>
+          <div class="flex justify-between items-center mt-2">
+            <span class="text-green-600 font-bold">₹149</span>
+            <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">Top Pick</span>
+          </div>
+          <button class="mt-3 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="bg-white border shadow-sm rounded-xl hover:shadow-lg overflow-hidden hover-zoom">
+        <img src="https://i.imgur.com/mWTufO4.jpeg" alt="Mug" class="w-full h-52 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg">Motivational Coffee Mug</h3>
+          <p class="text-sm text-gray-500">Microwave-safe, 350ml</p>
+          <div class="flex justify-between items-center mt-2">
+            <span class="text-green-600 font-bold">₹49</span>
+            <span class="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full">🔥 ₹49 Deal</span>
+          </div>
+          <button class="mt-3 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Add to Cart</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="bg-gray-100 py-12">
+    <h2 class="text-2xl font-bold text-center mb-6">Happy Customers 🛍️</h2>
+    <div class="max-w-xl mx-auto text-center text-gray-700">
+      <p>“I got 4 items under ₹300! Great for gifting & home use.”</p>
+      <p class="mt-2 font-semibold">– Aarti S., Delhi</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="bg-white py-10 text-center">
+    <h2 class="text-xl font-bold mb-2">Need Help?</h2>
+    <p>Email us: <a href="mailto:support@9949store.in" class="text-blue-600">support@9949store.in</a></p>
+    <p>WhatsApp: <a href="https://wa.me/918600111702" class="text-green-600">+91 86001 11702</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-sm text-center py-6">
+    <p>© 2025 99,49 Store – India's Budget Bazaar. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
