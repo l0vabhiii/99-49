@@ -3,95 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>99,49 Store – Insta Style</title>
+  <title>99,49 Store – Insta OG x Monster Style</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Inter', sans-serif; }
+    body { font-family: 'Inter', sans-serif; background: #0e0e0e; color: white; }
     .hover-zoom img { transition: transform 0.3s ease; }
     .hover-zoom:hover img { transform: scale(1.05); }
+    .glass { backdrop-filter: blur(6px); background-color: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); }
   </style>
 </head>
-<body class="bg-white text-gray-800" onload="AOS.init()">
+<body onload="AOS.init()">
 
   <!-- Header -->
-  <header class="sticky top-0 z-50 bg-white shadow-md" data-aos="fade-down">
+  <header class="sticky top-0 z-50 bg-black/90 shadow-md glass">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <div class="text-2xl font-extrabold text-orange-600">99,49 Store</div>
-      <input type="text" placeholder="Search..." class="border rounded-full px-4 py-2 text-sm w-1/2">
+      <div class="text-2xl font-extrabold text-green-400">99,49 Store</div>
+      <input type="text" placeholder="Search products..." class="border border-gray-600 bg-transparent text-white rounded-full px-4 py-2 text-sm w-1/2">
       <div class="flex gap-4 text-sm">
-        <a href="#" class="hover:text-orange-500">Login</a>
-        <a href="#" class="hover:text-orange-500">Cart 🛒</a>
+        <a href="#" class="hover:text-green-400">Login</a>
+        <a href="#" class="hover:text-green-400">Cart 🛒</a>
       </div>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="bg-orange-100 py-10 text-center" data-aos="fade-up">
-    <h1 class="text-4xl font-bold mb-2">Best Deals Under ₹149</h1>
-    <p class="text-gray-700 mb-4">Budget picks in gifts, stationery, kitchen, décor & more!</p>
-    <a href="#products" class="inline-block bg-orange-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-orange-600 transition transform hover:scale-105">Shop Now</a>
+  <section class="py-16 text-center bg-gradient-to-r from-black via-gray-900 to-black" data-aos="zoom-in">
+    <h1 class="text-4xl font-bold text-green-400 mb-2">Only OG Deals. Always ₹49 – ₹149</h1>
+    <p class="text-gray-300 mb-4">Unbox 1000+ Products – Stationery, Decor, Lifestyle & More</p>
+    <a href="#products" class="inline-block bg-green-500 text-black font-semibold px-6 py-2 rounded-full hover:scale-105 transition">Explore Now</a>
   </section>
 
-  <!-- Scrollable Categories -->
-  <section class="bg-white sticky top-[60px] z-40 overflow-x-auto whitespace-nowrap border-b" data-aos="fade-right">
-    <div class="px-4 py-3 flex gap-4 text-sm font-medium">
-      <button class="bg-red-500 text-white px-4 py-1 rounded-full hover:scale-105 transition">₹49</button>
-      <button class="bg-yellow-500 text-white px-4 py-1 rounded-full hover:scale-105 transition">₹99</button>
-      <button class="bg-green-600 text-white px-4 py-1 rounded-full hover:scale-105 transition">₹149</button>
-      <button class="bg-blue-500 text-white px-4 py-1 rounded-full hover:scale-105 transition">Décor</button>
-      <button class="bg-purple-500 text-white px-4 py-1 rounded-full hover:scale-105 transition">Toys</button>
-    </div>
+  <!-- Filter Buttons -->
+  <section class="sticky top-[64px] z-40 bg-black/70 border-b border-gray-700 px-4 py-3 flex gap-2 overflow-x-auto whitespace-nowrap" data-aos="fade-right">
+    <button class="bg-red-500 text-white px-4 py-1 rounded-full hover:scale-105 transition">₹49</button>
+    <button class="bg-yellow-500 text-black px-4 py-1 rounded-full hover:scale-105 transition">₹99</button>
+    <button class="bg-green-500 text-black px-4 py-1 rounded-full hover:scale-105 transition">₹149</button>
+    <button class="bg-blue-600 text-white px-4 py-1 rounded-full hover:scale-105 transition">Gifts</button>
+    <button class="bg-pink-500 text-white px-4 py-1 rounded-full hover:scale-105 transition">Makeup</button>
+    <button class="bg-purple-500 text-white px-4 py-1 rounded-full hover:scale-105 transition">Kitchen</button>
   </section>
 
-  <!-- Product Feed -->
-  <section id="products" class="max-w-7xl mx-auto px-4 py-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-    <!-- Product Card -->
-    <div class="bg-white rounded-xl shadow hover:shadow-xl overflow-hidden hover-zoom" data-aos="fade-up">
+  <!-- Product Grid -->
+  <section id="products" class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+    <div class="rounded-xl overflow-hidden bg-[#181818] shadow hover:shadow-green-500/20 hover-zoom" data-aos="fade-up">
       <div class="relative">
-        <img src="https://i.imgur.com/W1YyRrg.jpeg" class="w-full h-48 object-cover">
-        <button class="absolute bottom-2 right-2 bg-orange-600 text-white text-xs px-2 py-1 rounded">Add to Cart</button>
+        <img src="https://i.imgur.com/W1YyRrg.jpeg" class="w-full h-52 object-cover">
+        <button class="absolute bottom-2 right-2 bg-green-500 text-black text-xs px-2 py-1 rounded-full">Add to Cart</button>
       </div>
       <div class="p-3">
-        <h3 class="font-semibold text-sm">Cotton T-shirt</h3>
-        <p class="text-xs text-gray-500">Soft & breathable</p>
-        <p class="text-green-600 font-bold text-sm">₹99</p>
-        <p class="text-yellow-500 text-xs">⭐ 4.4 (523)</p>
+        <h3 class="font-bold text-white text-sm">Cotton T-shirt</h3>
+        <p class="text-xs text-gray-400">Breathable. Trendy.</p>
+        <p class="text-green-400 font-semibold text-sm">₹99</p>
+        <p class="text-yellow-400 text-xs">⭐ 4.3 (523)</p>
       </div>
     </div>
 
-    <!-- Repeat Product Card -->
-    <div class="bg-white rounded-xl shadow hover:shadow-xl overflow-hidden hover-zoom" data-aos="fade-up" data-aos-delay="100">
+    <div class="rounded-xl overflow-hidden bg-[#181818] shadow hover:shadow-green-500/20 hover-zoom" data-aos="fade-up" data-aos-delay="100">
       <div class="relative">
-        <img src="https://i.imgur.com/mWTufO4.jpeg" class="w-full h-48 object-cover">
-        <button class="absolute bottom-2 right-2 bg-orange-600 text-white text-xs px-2 py-1 rounded">Add to Cart</button>
+        <img src="https://i.imgur.com/mWTufO4.jpeg" class="w-full h-52 object-cover">
+        <button class="absolute bottom-2 right-2 bg-green-500 text-black text-xs px-2 py-1 rounded-full">Add to Cart</button>
       </div>
       <div class="p-3">
-        <h3 class="font-semibold text-sm">Glass Mug</h3>
-        <p class="text-xs text-gray-500">Microwave-safe, 350ml</p>
-        <p class="text-green-600 font-bold text-sm">₹49</p>
-        <p class="text-yellow-500 text-xs">⭐ 4.6 (218)</p>
+        <h3 class="font-bold text-white text-sm">Glass Mug</h3>
+        <p class="text-xs text-gray-400">Microwave Safe</p>
+        <p class="text-green-400 font-semibold text-sm">₹49</p>
+        <p class="text-yellow-400 text-xs">⭐ 4.7 (218)</p>
       </div>
     </div>
+
+    <!-- More cards -->
   </section>
 
   <!-- Testimonial -->
-  <section class="bg-gray-50 py-10 text-center" data-aos="zoom-in">
-    <h2 class="text-xl font-bold mb-2">What Our Customers Say 💬</h2>
-    <p class="text-gray-600 italic">"Amazing budget shopping experience under ₹149. Got gifts, glassware, and more!" – Aarti, Pune</p>
+  <section class="bg-[#121212] py-12 text-center" data-aos="zoom-in-up">
+    <h2 class="text-xl font-bold text-green-400 mb-2">Why Customers ❤️ Us</h2>
+    <p class="text-gray-400 italic">"I got everything from mugs to makeup under ₹149. OG vibes and quality too!" – Aarti, Pune</p>
   </section>
 
-  <!-- Contact Info -->
-  <section class="bg-orange-50 py-6 text-center text-sm" data-aos="fade-up">
-    <p>Email: support@9949store.in</p>
-    <p>WhatsApp: <a href="https://wa.me/918600111702" class="text-blue-600">8600111702</a></p>
+  <!-- Contact -->
+  <section class="bg-black/90 py-6 text-center text-sm border-t border-gray-700">
+    <p class="text-white">Email: support@9949store.in</p>
+    <p class="text-white">WhatsApp: <a href="https://wa.me/918600111702" class="text-green-400">8600111702</a></p>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white text-center py-4 text-sm" data-aos="fade-up">
-    <p>© 2025 99,49 Store. All Rights Reserved.</p>
+  <footer class="bg-black text-gray-400 text-center py-4 text-sm border-t border-gray-800">
+    <p>© 2025 99,49 Store. Built with 🖤</p>
   </footer>
 
 </body>
