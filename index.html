@@ -1,95 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>99,49 Store – Budget Deals with Premium Feel</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>99,49 Store – Premium Global Shopping</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; }
-    .hover-zoom img { transition: transform 0.3s ease; }
-    .hover-zoom:hover img { transform: scale(1.05); }
-    .deal-badge { background: linear-gradient(to right, #ff416c, #ff4b2b); color: white; font-size: 0.75rem; padding: 2px 6px; border-radius: 0.25rem; }
+    .hover-zoom img { transition: transform 0.4s ease; }
+    .hover-zoom:hover img { transform: scale(1.03); }
+    .deal-badge { background: #222; color: white; font-size: 0.75rem; padding: 2px 6px; border-radius: 0.25rem; text-transform: uppercase; }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900" onload="AOS.init()">
 
-  <!-- Navbar -->
-  <header class="sticky top-0 z-50 bg-white shadow-md">
-    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
-      <div class="text-2xl font-extrabold text-pink-600">99,49 Store</div>
-      <input type="text" placeholder="Search products..." class="w-1/2 px-4 py-2 border rounded-full text-sm" />
-      <div class="flex gap-4 text-sm">
-        <a href="#login" class="hover:text-pink-600">Login</a>
-        <a href="#cart" class="hover:text-pink-600">Cart 🛒</a>
+  <!-- Header -->
+  <header class="bg-white sticky top-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
+      <h1 class="text-2xl font-extrabold tracking-tight text-gray-800">99,49 Store</h1>
+      <input type="text" placeholder="Search products..." class="w-1/2 px-4 py-2 border border-gray-300 rounded-full text-sm focus:outline-none focus:ring focus:border-blue-400" />
+      <div class="flex items-center space-x-4">
+        <a href="#login" class="text-sm hover:text-blue-600">Login</a>
+        <a href="#cart" class="text-sm hover:text-blue-600">Cart 🛒</a>
       </div>
     </div>
   </header>
 
-  <!-- Banner -->
-  <section class="relative bg-gradient-to-br from-pink-100 to-purple-200 py-14 text-center" data-aos="fade-up">
-    <h1 class="text-4xl font-bold text-pink-700">Best Deals Starting ₹49</h1>
-    <p class="text-gray-700 mt-2">From daily essentials to unique finds — all under ₹149</p>
-    <a href="#products" class="mt-5 inline-block bg-pink-600 text-white px-6 py-2 rounded-full hover:bg-pink-700 transition">Start Shopping</a>
-    <img src="https://i.imgur.com/hNdp9FG.png" alt="shopping banner" class="absolute right-10 bottom-[-30px] hidden md:block w-52" />
+  <!-- Hero -->
+  <section class="bg-gray-100 py-16 text-center" data-aos="fade-up">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold text-gray-800">Premium Products. Affordable Prices.</h2>
+      <p class="text-gray-600 mt-4">Shop smarter – ₹49, ₹99, ₹149 curated collections now live.</p>
+      <a href="#products" class="inline-block mt-6 bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition">Explore Collections</a>
+    </div>
   </section>
 
   <!-- Categories -->
-  <section class="bg-white sticky top-[56px] z-40 overflow-x-auto whitespace-nowrap border-b">
-    <div class="px-4 py-3 flex gap-4 text-sm font-medium">
-      <button class="bg-red-500 text-white px-4 py-1 rounded-full">₹49</button>
-      <button class="bg-yellow-500 text-white px-4 py-1 rounded-full">₹99</button>
-      <button class="bg-green-600 text-white px-4 py-1 rounded-full">₹149</button>
-      <button class="bg-purple-600 text-white px-4 py-1 rounded-full">Fashion</button>
-      <button class="bg-pink-500 text-white px-4 py-1 rounded-full">Kitchen</button>
-      <button class="bg-blue-600 text-white px-4 py-1 rounded-full">Home</button>
+  <section class="bg-white border-t border-b py-4">
+    <div class="max-w-7xl mx-auto flex overflow-x-auto gap-3 px-4 text-sm font-semibold">
+      <button class="bg-gray-800 text-white px-4 py-1 rounded-full">All</button>
+      <button class="bg-blue-600 text-white px-4 py-1 rounded-full">₹49</button>
+      <button class="bg-green-600 text-white px-4 py-1 rounded-full">₹99</button>
+      <button class="bg-yellow-500 text-white px-4 py-1 rounded-full">₹149</button>
+      <button class="bg-red-500 text-white px-4 py-1 rounded-full">Essentials</button>
+      <button class="bg-purple-600 text-white px-4 py-1 rounded-full">Accessories</button>
     </div>
   </section>
 
-  <!-- Product Grid -->
+  <!-- Products -->
   <section id="products" class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-    <div class="bg-white shadow-lg rounded-xl overflow-hidden hover-zoom" data-aos="fade-up">
-      <img src="https://i.imgur.com/W1YyRrg.jpeg" class="w-full h-48 object-cover" />
+    <div class="bg-white rounded-lg shadow hover:shadow-lg hover-zoom" data-aos="fade-up">
+      <img src="https://i.imgur.com/9q1HgIM.jpeg" alt="Product" class="w-full h-48 object-cover" />
       <div class="p-4">
-        <div class="deal-badge mb-1">₹99 Deal</div>
-        <h3 class="font-semibold text-sm">Cotton T-shirt</h3>
-        <p class="text-gray-500 text-xs">Soft fit, trending style</p>
-        <p class="font-bold text-pink-600">₹99</p>
-        <p class="text-yellow-500 text-xs">⭐ 4.4 (542)</p>
+        <div class="deal-badge mb-2 inline-block">best under ₹99</div>
+        <h3 class="font-semibold text-base">Casual Cotton T-shirt</h3>
+        <p class="text-sm text-gray-500">Soft, breathable, modern fit</p>
+        <p class="mt-2 font-bold text-green-700">₹99</p>
+        <p class="text-yellow-500 text-sm">⭐ 4.6 (320)</p>
       </div>
     </div>
-
-    <div class="bg-white shadow-lg rounded-xl overflow-hidden hover-zoom" data-aos="fade-up" data-aos-delay="100">
-      <img src="https://i.imgur.com/mWTufO4.jpeg" class="w-full h-48 object-cover" />
+    <div class="bg-white rounded-lg shadow hover:shadow-lg hover-zoom" data-aos="fade-up" data-aos-delay="100">
+      <img src="https://i.imgur.com/uyxih6r.jpeg" alt="Product" class="w-full h-48 object-cover" />
       <div class="p-4">
-        <div class="deal-badge mb-1">Hot</div>
-        <h3 class="font-semibold text-sm">Glass Mug 350ml</h3>
-        <p class="text-gray-500 text-xs">Microwave safe, Clear design</p>
-        <p class="font-bold text-pink-600">₹49</p>
-        <p class="text-yellow-500 text-xs">⭐ 4.7 (218)</p>
+        <div class="deal-badge mb-2 inline-block">hot pick</div>
+        <h3 class="font-semibold text-base">Stainless Steel Bottle 1L</h3>
+        <p class="text-sm text-gray-500">Leak-proof. Travel friendly.</p>
+        <p class="mt-2 font-bold text-green-700">₹149</p>
+        <p class="text-yellow-500 text-sm">⭐ 4.8 (412)</p>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="bg-gradient-to-r from-pink-100 to-purple-100 py-14 text-center" data-aos="zoom-in-up">
-    <h2 class="text-2xl font-bold text-gray-800">Become a Seller on 99,49 Store</h2>
-    <p class="text-gray-600">Join 5000+ sellers & grow with us</p>
-    <a href="#partner" class="mt-4 inline-block bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800">Start Selling</a>
+  <!-- Seller CTA -->
+  <section class="bg-gray-900 text-white py-16 text-center" data-aos="fade-up">
+    <h2 class="text-3xl font-bold">Sell with 99,49 Store</h2>
+    <p class="mt-2 text-gray-300">Join 10,000+ sellers delivering to 150+ cities worldwide.</p>
+    <a href="#partner" class="mt-6 inline-block bg-white text-black px-6 py-2 rounded-full hover:bg-gray-200 transition">Become a Partner</a>
   </section>
 
   <!-- Contact -->
-  <section class="bg-white py-6 text-center text-sm">
-    <p>Email: support@9949store.in</p>
-    <p>WhatsApp: <a href="https://wa.me/918600111702" class="text-pink-600">8600111702</a></p>
+  <section class="bg-white text-center text-sm py-6">
+    <p>Email: <a href="mailto:support@9949store.in" class="text-blue-600">support@9949store.in</a></p>
+    <p>WhatsApp: <a href="https://wa.me/918600111702" class="text-blue-600">8600111702</a></p>
   </section>
 
   <!-- Footer -->
   <footer class="bg-black text-white text-center py-4 text-sm">
-    <p>© 2025 99,49 Store. Built with 💖 by MidowWebCreater</p>
+    <p>© 2025 99,49 Store. All rights reserved. Crafted by MidowWebCreater</p>
   </footer>
 
   <script>AOS.init();</script>
