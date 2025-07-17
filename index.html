@@ -1,98 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>99,49 Store – Insta OG x Monster Style</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>99,49 Store – Budget Deals with Premium Feel</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
-    body { font-family: 'Inter', sans-serif; background: #0e0e0e; color: white; }
+    body { font-family: 'Inter', sans-serif; }
     .hover-zoom img { transition: transform 0.3s ease; }
     .hover-zoom:hover img { transform: scale(1.05); }
-    .glass { backdrop-filter: blur(6px); background-color: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); }
+    .deal-badge { background: linear-gradient(to right, #ff416c, #ff4b2b); color: white; font-size: 0.75rem; padding: 2px 6px; border-radius: 0.25rem; }
   </style>
 </head>
-<body onload="AOS.init()">
+<body class="bg-gray-50 text-gray-900" onload="AOS.init()">
 
-  <!-- Header -->
-  <header class="sticky top-0 z-50 bg-black/90 shadow-md glass">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <div class="text-2xl font-extrabold text-green-400">99,49 Store</div>
-      <input type="text" placeholder="Search products..." class="border border-gray-600 bg-transparent text-white rounded-full px-4 py-2 text-sm w-1/2">
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 bg-white shadow-md">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+      <div class="text-2xl font-extrabold text-pink-600">99,49 Store</div>
+      <input type="text" placeholder="Search products..." class="w-1/2 px-4 py-2 border rounded-full text-sm" />
       <div class="flex gap-4 text-sm">
-        <a href="#" class="hover:text-green-400">Login</a>
-        <a href="#" class="hover:text-green-400">Cart 🛒</a>
+        <a href="#login" class="hover:text-pink-600">Login</a>
+        <a href="#cart" class="hover:text-pink-600">Cart 🛒</a>
       </div>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="py-16 text-center bg-gradient-to-r from-black via-gray-900 to-black" data-aos="zoom-in">
-    <h1 class="text-4xl font-bold text-green-400 mb-2">Only OG Deals. Always ₹49 – ₹149</h1>
-    <p class="text-gray-300 mb-4">Unbox 1000+ Products – Stationery, Decor, Lifestyle & More</p>
-    <a href="#products" class="inline-block bg-green-500 text-black font-semibold px-6 py-2 rounded-full hover:scale-105 transition">Explore Now</a>
+  <!-- Banner -->
+  <section class="relative bg-gradient-to-br from-pink-100 to-purple-200 py-14 text-center" data-aos="fade-up">
+    <h1 class="text-4xl font-bold text-pink-700">Best Deals Starting ₹49</h1>
+    <p class="text-gray-700 mt-2">From daily essentials to unique finds — all under ₹149</p>
+    <a href="#products" class="mt-5 inline-block bg-pink-600 text-white px-6 py-2 rounded-full hover:bg-pink-700 transition">Start Shopping</a>
+    <img src="https://i.imgur.com/hNdp9FG.png" alt="shopping banner" class="absolute right-10 bottom-[-30px] hidden md:block w-52" />
   </section>
 
-  <!-- Filter Buttons -->
-  <section class="sticky top-[64px] z-40 bg-black/70 border-b border-gray-700 px-4 py-3 flex gap-2 overflow-x-auto whitespace-nowrap" data-aos="fade-right">
-    <button class="bg-red-500 text-white px-4 py-1 rounded-full hover:scale-105 transition">₹49</button>
-    <button class="bg-yellow-500 text-black px-4 py-1 rounded-full hover:scale-105 transition">₹99</button>
-    <button class="bg-green-500 text-black px-4 py-1 rounded-full hover:scale-105 transition">₹149</button>
-    <button class="bg-blue-600 text-white px-4 py-1 rounded-full hover:scale-105 transition">Gifts</button>
-    <button class="bg-pink-500 text-white px-4 py-1 rounded-full hover:scale-105 transition">Makeup</button>
-    <button class="bg-purple-500 text-white px-4 py-1 rounded-full hover:scale-105 transition">Kitchen</button>
+  <!-- Categories -->
+  <section class="bg-white sticky top-[56px] z-40 overflow-x-auto whitespace-nowrap border-b">
+    <div class="px-4 py-3 flex gap-4 text-sm font-medium">
+      <button class="bg-red-500 text-white px-4 py-1 rounded-full">₹49</button>
+      <button class="bg-yellow-500 text-white px-4 py-1 rounded-full">₹99</button>
+      <button class="bg-green-600 text-white px-4 py-1 rounded-full">₹149</button>
+      <button class="bg-purple-600 text-white px-4 py-1 rounded-full">Fashion</button>
+      <button class="bg-pink-500 text-white px-4 py-1 rounded-full">Kitchen</button>
+      <button class="bg-blue-600 text-white px-4 py-1 rounded-full">Home</button>
+    </div>
   </section>
 
   <!-- Product Grid -->
-  <section id="products" class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-    <div class="rounded-xl overflow-hidden bg-[#181818] shadow hover:shadow-green-500/20 hover-zoom" data-aos="fade-up">
-      <div class="relative">
-        <img src="https://i.imgur.com/W1YyRrg.jpeg" class="w-full h-52 object-cover">
-        <button class="absolute bottom-2 right-2 bg-green-500 text-black text-xs px-2 py-1 rounded-full">Add to Cart</button>
-      </div>
-      <div class="p-3">
-        <h3 class="font-bold text-white text-sm">Cotton T-shirt</h3>
-        <p class="text-xs text-gray-400">Breathable. Trendy.</p>
-        <p class="text-green-400 font-semibold text-sm">₹99</p>
-        <p class="text-yellow-400 text-xs">⭐ 4.3 (523)</p>
+  <section id="products" class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+    <div class="bg-white shadow-lg rounded-xl overflow-hidden hover-zoom" data-aos="fade-up">
+      <img src="https://i.imgur.com/W1YyRrg.jpeg" class="w-full h-48 object-cover" />
+      <div class="p-4">
+        <div class="deal-badge mb-1">₹99 Deal</div>
+        <h3 class="font-semibold text-sm">Cotton T-shirt</h3>
+        <p class="text-gray-500 text-xs">Soft fit, trending style</p>
+        <p class="font-bold text-pink-600">₹99</p>
+        <p class="text-yellow-500 text-xs">⭐ 4.4 (542)</p>
       </div>
     </div>
 
-    <div class="rounded-xl overflow-hidden bg-[#181818] shadow hover:shadow-green-500/20 hover-zoom" data-aos="fade-up" data-aos-delay="100">
-      <div class="relative">
-        <img src="https://i.imgur.com/mWTufO4.jpeg" class="w-full h-52 object-cover">
-        <button class="absolute bottom-2 right-2 bg-green-500 text-black text-xs px-2 py-1 rounded-full">Add to Cart</button>
-      </div>
-      <div class="p-3">
-        <h3 class="font-bold text-white text-sm">Glass Mug</h3>
-        <p class="text-xs text-gray-400">Microwave Safe</p>
-        <p class="text-green-400 font-semibold text-sm">₹49</p>
-        <p class="text-yellow-400 text-xs">⭐ 4.7 (218)</p>
+    <div class="bg-white shadow-lg rounded-xl overflow-hidden hover-zoom" data-aos="fade-up" data-aos-delay="100">
+      <img src="https://i.imgur.com/mWTufO4.jpeg" class="w-full h-48 object-cover" />
+      <div class="p-4">
+        <div class="deal-badge mb-1">Hot</div>
+        <h3 class="font-semibold text-sm">Glass Mug 350ml</h3>
+        <p class="text-gray-500 text-xs">Microwave safe, Clear design</p>
+        <p class="font-bold text-pink-600">₹49</p>
+        <p class="text-yellow-500 text-xs">⭐ 4.7 (218)</p>
       </div>
     </div>
-
-    <!-- More cards -->
   </section>
 
-  <!-- Testimonial -->
-  <section class="bg-[#121212] py-12 text-center" data-aos="zoom-in-up">
-    <h2 class="text-xl font-bold text-green-400 mb-2">Why Customers ❤️ Us</h2>
-    <p class="text-gray-400 italic">"I got everything from mugs to makeup under ₹149. OG vibes and quality too!" – Aarti, Pune</p>
+  <!-- CTA Section -->
+  <section class="bg-gradient-to-r from-pink-100 to-purple-100 py-14 text-center" data-aos="zoom-in-up">
+    <h2 class="text-2xl font-bold text-gray-800">Become a Seller on 99,49 Store</h2>
+    <p class="text-gray-600">Join 5000+ sellers & grow with us</p>
+    <a href="#partner" class="mt-4 inline-block bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800">Start Selling</a>
   </section>
 
   <!-- Contact -->
-  <section class="bg-black/90 py-6 text-center text-sm border-t border-gray-700">
-    <p class="text-white">Email: support@9949store.in</p>
-    <p class="text-white">WhatsApp: <a href="https://wa.me/918600111702" class="text-green-400">8600111702</a></p>
+  <section class="bg-white py-6 text-center text-sm">
+    <p>Email: support@9949store.in</p>
+    <p>WhatsApp: <a href="https://wa.me/918600111702" class="text-pink-600">8600111702</a></p>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-black text-gray-400 text-center py-4 text-sm border-t border-gray-800">
-    <p>© 2025 99,49 Store. Built with 🖤</p>
+  <footer class="bg-black text-white text-center py-4 text-sm">
+    <p>© 2025 99,49 Store. Built with 💖 by MidowWebCreater</p>
   </footer>
 
+  <script>AOS.init();</script>
 </body>
 </html>
