@@ -4,58 +4,75 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Admin Dashboard - 99Shop</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <script type="module" src="firebase.js"></script>
-  <link href="https://cdn.tailwindcss.com" rel="stylesheet"/>
 </head>
-<body class="bg-gray-100 p-6">
-  <h1 class="text-3xl font-bold mb-6">Admin Dashboard</h1>
+<body class="bg-gray-100 p-6 min-h-screen">
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+  <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+    <h1 class="text-3xl font-bold mb-6 text-center text-red-600">Admin Dashboard - 99Shop</h1>
 
-    <!-- Add Product -->
-    <div class="bg-white p-6 rounded shadow-md">
-      <h2 class="text-xl font-semibold mb-4">Add Product</h2>
-      <input id="name" placeholder="Product Name" class="w-full p-2 border mb-2"/>
-      <input id="price" placeholder="Price ₹" type="number" class="w-full p-2 border mb-2"/>
-      <input id="image" placeholder="Image URL" class="w-full p-2 border mb-2"/>
-      <input id="category" placeholder="Category" class="w-full p-2 border mb-4"/>
-      <button id="addBtn" class="bg-green-600 text-white px-4 py-2">Add Product</button>
-      <p id="add-msg" class="mt-2 text-sm text-green-700"></p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Add Product -->
+      <div class="border p-4 rounded-md shadow-sm">
+        <h2 class="text-xl font-semibold mb-4">➕ Add Product</h2>
+        <input id="name" placeholder="Product Name" class="w-full mb-2 p-2 border rounded"/>
+        <input id="price" placeholder="Price (₹)" type="number" class="w-full mb-2 p-2 border rounded"/>
+        <input id="image" placeholder="Image URL" class="w-full mb-2 p-2 border rounded"/>
+        <input id="category" placeholder="Category" class="w-full mb-4 p-2 border rounded"/>
+        <button id="addBtn" class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">Add Product</button>
+        <p id="add-msg" class="text-green-600 text-sm mt-2"></p>
+      </div>
+
+      <!-- Delete Product -->
+      <div class="border p-4 rounded-md shadow-sm">
+        <h2 class="text-xl font-semibold mb-4">🗑️ Delete Product</h2>
+        <input id="deleteId" placeholder="Product ID" class="w-full mb-4 p-2 border rounded"/>
+        <button id="deleteBtn" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 transition">Delete Product</button>
+        <p id="delete-msg" class="text-red-600 text-sm mt-2"></p>
+      </div>
+
     </div>
-
-    <!-- Delete Product -->
-    <div class="bg-white p-6 rounded shadow-md">
-      <h2 class="text-xl font-semibold mb-4">Delete Product</h2>
-      <input id="deleteId" placeholder="Product ID" class="w-full p-2 border mb-4"/>
-      <button id="deleteBtn" class="bg-red-600 text-white px-4 py-2">Delete Product</button>
-      <p id="delete-msg" class="mt-2 text-sm text-red-700"></p>
-    </div>
-
   </div>
 
   <script type="module">
     import { db } from './firebase.js';
     import { collection, addDoc, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
-    const addBtn = document.getElementById("addBtn");
-    const deleteBtn = document.getElementById("deleteBtn");
+    document.getElementById("addBtn").onclick = async () => {
+      const name = document.getElementById("name").value.trim();
+      const price = document.getElementById("price").value.trim();
+      const image = document.getElementById("image").value.trim();
+      const category = document.getElementById("category").value.trim();
 
-    addBtn.onclick = async () => {
-      const name = document.getElementById("name").value;
-      const price = document.getElementById("price").value;
-      const image = document.getElementById("image").value;
-      const category = document.getElementById("category").value;
+      if (!name || !price || !image || !category) {
+        document.getElementById("add-msg").innerText = "All fields required.";
+        return;
+      }
 
-      const newProduct = { name, price, image, category };
-      await addDoc(collection(db, "Products"), newProduct);
-      document.getElementById("add-msg").innerText = "✅ Product added successfully!";
+      await addDoc(collection(db, "Products"), {
+        name,
+        price,
+        image,
+        category
+      });
+
+      document.getElementById("add-msg").innerText = "✅ Product added!";
+      document.getElementById("name").value = "";
+      document.getElementById("price").value = "";
+      document.getElementById("image").value = "";
+      document.getElementById("category").value = "";
     };
 
-    deleteBtn.onclick = async () => {
-      const deleteId = document.getElementById("deleteId").value;
+    document.getElementById("deleteBtn").onclick = async () => {
+      const deleteId = document.getElementById("deleteId").value.trim();
+      if (!deleteId) return;
       await deleteDoc(doc(db, "Products", deleteId));
       document.getElementById("delete-msg").innerText = "🗑️ Product deleted!";
+      document.getElementById("deleteId").value = "";
     };
   </script>
+
 </body>
 </html>
