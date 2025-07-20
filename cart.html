@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cart - 99Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <div class="bg-green-600 text-white text-xl font-bold p-4">🛒 My Cart - 99Shop</div>
+  <div class="p-4" id="cart-items"></div>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartItems = document.getElementById("cart-items");
+
+    if (cart.length === 0) {
+      cartItems.innerHTML = "<p class='text-center text-gray-500 mt-10'>No items in cart.</p>";
+    } else {
+      cart.forEach((item, index) => {
+        cartItems.innerHTML += `
+          <div class="bg-white p-4 mb-4 shadow rounded relative">
+            <img src="${item.image}" class="w-full h-40 object-cover mb-2 rounded" />
+            <h3 class="text-lg font-semibold">${item.title}</h3>
+            <p class="text-red-600 font-bold">₹${item.price}</p>
+            <p class="text-sm text-gray-500">${item.description}</p>
+            <button onclick="removeFromCart(${index})" class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 text-xs rounded">Remove</button>
+          </div>
+        `;
+      });
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      location.reload();
+    }
+  </script>
+
+</body>
+</html>
