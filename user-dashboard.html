@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Dashboard - 99Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white">
+
+  <!-- Navbar -->
+  <div class="flex items-center justify-between p-4 bg-black text-white">
+    <h1 class="text-xl font-bold">99Shop</h1>
+    <div>
+      <button onclick="logout()" class="text-sm bg-red-500 px-3 py-1 rounded">Logout</button>
+    </div>
+  </div>
+
+  <!-- Welcome -->
+  <div class="text-center mt-8">
+    <h2 class="text-2xl font-bold">Welcome to 99Shop!</h2>
+    <p class="text-gray-600">Explore amazing ₹49, ₹99, ₹149 deals below.</p>
+  </div>
+
+  <!-- Product Section (reuse index.html later) -->
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4" id="product-list">
+    <!-- Products loaded from Firestore -->
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCPzsXjVHzF0eQSey9l408C98sOv0zd6P4",
+      authDomain: "shop-bc854.firebaseapp.com",
+      projectId: "shop-bc854",
+      storageBucket: "shop-bc854.firebasestorage.app",
+      messagingSenderId: "676685621220",
+      appId: "1:676685621220:web:598ec9f24a4cb9877649f1",
+      measurementId: "G-TR820WL532"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    // Redirect if not logged in
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        window.location.href = "login.html";
+      }
+    });
+
+    // Logout
+    window.logout = function () {
+      signOut(auth).then(() => {
+        window.location.href = "login.html";
+      });
+    };
+
+    // Load products
+    const productList = document.getElementById("product-list");
+
+    const querySnapshot = await getDocs(collection(db, "products"));
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      productList.innerHTML += `
+        <div class="border p-3 rounded shadow hover:shadow-lg transition">
+          <img src="${data.image}" class="w-full h-40 object-cover mb-2 rounded" />
+          <h3 class="text-lg font-semibold">${data.title}</h3>
+          <p class="text-red-600 font-bold">₹${data.price}</p>
+          <p class="text-sm text-gray-500">${data.description}</p>
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html>
