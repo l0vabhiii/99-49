@@ -1,117 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>99,49 Store – Premium Global Shopping</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>99Shop – Premium eCommerce</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <style>
     body { font-family: 'Inter', sans-serif; }
-    .hover-zoom img { transition: transform 0.4s ease; }
-    .hover-zoom:hover img { transform: scale(1.03); }
-    .deal-badge { background: #222; color: white; font-size: 0.75rem; padding: 2px 6px; border-radius: 0.25rem; text-transform: uppercase; }
+    .hover-zoom img { transition: transform 0.3s ease; }
+    .hover-zoom:hover img { transform: scale(1.05); }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-900" onload="AOS.init()">
+<body class="bg-gray-50 text-gray-800" onload="AOS.init()">
 
   <!-- Header -->
   <header class="bg-white sticky top-0 z-50 shadow-md">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
-      <h1 class="text-2xl font-extrabold tracking-tight text-gray-800">99,49 Store</h1>
-      <input type="text" placeholder="Search products..." class="w-1/2 px-4 py-2 border border-gray-300 rounded-full text-sm focus:outline-none focus:ring focus:border-blue-400" />
-      <div class="flex items-center space-x-4">
-        <a href="#wishlist" class="text-sm hover:text-pink-600">Wishlist ❤️</a>
-        <a href="#cart" class="text-sm hover:text-blue-600">Cart 🛒 (<span id="cart-count">0</span>)</a>
+      <h1 class="text-2xl font-bold text-gray-800">99Shop</h1>
+      <input type="text" placeholder="Search..." class="w-1/2 px-4 py-2 border border-gray-300 rounded-full text-sm focus:outline-none"/>
+      <div class="space-x-4 text-sm">
+        <a href="#" class="hover:text-blue-600">Login</a>
+        <a href="#" class="hover:text-blue-600">Cart 🛒</a>
+        <a href="#" class="hover:text-red-500">Wishlist ❤️</a>
       </div>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="bg-gray-100 py-16 text-center" data-aos="fade-up">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-4xl font-bold text-gray-800">Premium Products. Affordable Prices.</h2>
-      <p class="text-gray-600 mt-4">Shop smarter – ₹49, ₹99, ₹149 curated collections now live.</p>
-      <a href="#products" class="inline-block mt-6 bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition">Explore Collections</a>
-    </div>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-20 text-center" data-aos="fade-down">
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Home & Kitchen Essentials</h2>
+    <p class="text-lg text-gray-300 mb-6">1000+ quality products at best price</p>
+    <a href="#products" class="bg-white text-black px-6 py-2 rounded-full text-sm hover:bg-gray-200">Shop Now</a>
   </section>
 
-  <!-- Categories -->
-  <section class="bg-white border-t border-b py-4">
-    <div class="max-w-7xl mx-auto flex overflow-x-auto gap-3 px-4 text-sm font-semibold">
-      <button class="bg-gray-800 text-white px-4 py-1 rounded-full">All</button>
-      <button class="bg-blue-600 text-white px-4 py-1 rounded-full">₹49</button>
-      <button class="bg-green-600 text-white px-4 py-1 rounded-full">₹99</button>
-      <button class="bg-yellow-500 text-white px-4 py-1 rounded-full">₹149</button>
-      <button class="bg-red-500 text-white px-4 py-1 rounded-full">Essentials</button>
-      <button class="bg-purple-600 text-white px-4 py-1 rounded-full">Accessories</button>
-    </div>
-  </section>
+  <!-- Category Scroll -->
+  <div class="overflow-x-auto bg-white py-4 px-4 flex space-x-4 text-sm font-semibold border-t border-b" data-aos="fade-left">
+    <button class="bg-gray-800 text-white px-4 py-1 rounded-full">All</button>
+    <button class="bg-blue-600 text-white px-4 py-1 rounded-full">₹49</button>
+    <button class="bg-green-600 text-white px-4 py-1 rounded-full">₹99</button>
+    <button class="bg-yellow-500 text-white px-4 py-1 rounded-full">₹149</button>
+    <button class="bg-purple-600 text-white px-4 py-1 rounded-full">Kitchen</button>
+    <button class="bg-pink-500 text-white px-4 py-1 rounded-full">Electronics</button>
+  </div>
 
-  <!-- Products -->
+  <!-- Product Grid -->
   <section id="products" class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
     <div class="bg-white rounded-lg shadow hover:shadow-lg hover-zoom" data-aos="fade-up">
-      <img src="https://i.imgur.com/9q1HgIM.jpeg" alt="Product" class="w-full h-48 object-cover" />
+      <img src="https://i.imgur.com/HmK7mkt.jpeg" class="w-full h-48 object-cover rounded-t-lg" />
       <div class="p-4">
-        <div class="deal-badge mb-2 inline-block">best under ₹99</div>
-        <h3 class="font-semibold text-base">Casual Cotton T-shirt</h3>
-        <p class="text-sm text-gray-500">Soft, breathable, modern fit</p>
-        <p class="mt-2 font-bold text-green-700">₹99</p>
-        <p class="text-yellow-500 text-sm">⭐ 4.6 (320)</p>
-        <div class="flex gap-2 mt-3">
-          <button onclick="addToCart('Cotton T-shirt')" class="text-sm bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700">Add to Cart</button>
-          <button onclick="addToWishlist('Cotton T-shirt')" class="text-sm bg-gray-700 text-white px-3 py-1 rounded-full hover:bg-gray-800">♡ Wishlist</button>
+        <h3 class="font-semibold text-base">Multipurpose Mixer Grinder</h3>
+        <p class="text-sm text-gray-500">750W, 3 Jars, Copper Motor</p>
+        <p class="mt-2 font-bold text-green-700">₹1499</p>
+        <p class="text-yellow-500 text-sm">⭐ 4.7 (223)</p>
+        <div class="mt-2 flex justify-between text-sm">
+          <button class="text-blue-600 hover:underline">Add to Cart</button>
+          <button class="text-red-500 hover:underline">❤️ Wishlist</button>
         </div>
       </div>
     </div>
+
     <div class="bg-white rounded-lg shadow hover:shadow-lg hover-zoom" data-aos="fade-up" data-aos-delay="100">
-      <img src="https://i.imgur.com/uyxih6r.jpeg" alt="Product" class="w-full h-48 object-cover" />
+      <img src="https://i.imgur.com/bqxV7zI.jpeg" class="w-full h-48 object-cover rounded-t-lg" />
       <div class="p-4">
-        <div class="deal-badge mb-2 inline-block">hot pick</div>
-        <h3 class="font-semibold text-base">Stainless Steel Bottle 1L</h3>
-        <p class="text-sm text-gray-500">Leak-proof. Travel friendly.</p>
-        <p class="mt-2 font-bold text-green-700">₹149</p>
-        <p class="text-yellow-500 text-sm">⭐ 4.8 (412)</p>
-        <div class="flex gap-2 mt-3">
-          <button onclick="addToCart('Steel Bottle')" class="text-sm bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700">Add to Cart</button>
-          <button onclick="addToWishlist('Steel Bottle')" class="text-sm bg-gray-700 text-white px-3 py-1 rounded-full hover:bg-gray-800">♡ Wishlist</button>
+        <h3 class="font-semibold text-base">Non-stick Fry Pan</h3>
+        <p class="text-sm text-gray-500">24cm, Induction compatible</p>
+        <p class="mt-2 font-bold text-green-700">₹449</p>
+        <p class="text-yellow-500 text-sm">⭐ 4.5 (143)</p>
+        <div class="mt-2 flex justify-between text-sm">
+          <button class="text-blue-600 hover:underline">Add to Cart</button>
+          <button class="text-red-500 hover:underline">❤️ Wishlist</button>
         </div>
       </div>
     </div>
+    <!-- Add more product cards as needed -->
   </section>
 
-  <!-- Seller CTA -->
-  <section class="bg-gray-900 text-white py-16 text-center" data-aos="fade-up">
-    <h2 class="text-3xl font-bold">Sell with 99,49 Store</h2>
-    <p class="mt-2 text-gray-300">Join 10,000+ sellers delivering to 150+ cities worldwide.</p>
-    <a href="#partner" class="mt-6 inline-block bg-white text-black px-6 py-2 rounded-full hover:bg-gray-200 transition">Become a Partner</a>
-  </section>
-
-  <!-- Contact -->
-  <section class="bg-white text-center text-sm py-6">
-    <p>Email: <a href="mailto:support@9949store.in" class="text-blue-600">support@9949store.in</a></p>
-    <p>WhatsApp: <a href="https://wa.me/918600111702" class="text-blue-600">8600111702</a></p>
+  <!-- Testimonials -->
+  <section class="bg-gray-100 py-12" data-aos="fade-up">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-2xl font-bold mb-4">Loved by 10,000+ Customers</h2>
+      <p class="text-gray-600 mb-6">Here’s what our shoppers say:</p>
+      <blockquote class="text-gray-700 italic">“The quality is amazing and delivery is fast. I order all my kitchen items from 99Shop!”</blockquote>
+      <p class="mt-2 text-sm text-gray-500">– Ritu Sharma, Pune</p>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-black text-white text-center py-4 text-sm">
-    <p>© 2025 99,49 Store. All rights reserved. Crafted by MidowWebCreater</p>
+  <footer class="bg-black text-white text-center py-6 text-sm">
+    <p>© 2025 99Shop. All rights reserved. Powered by MidowWebCreater</p>
   </footer>
 
-  <!-- JS: Cart + Wishlist logic -->
-  <script>
-    let cartCount = 0;
-    function addToCart(item) {
-      cartCount++;
-      document.getElementById('cart-count').innerText = cartCount;
-      alert(`${item} added to cart!`);
-    }
-    function addToWishlist(item) {
-      alert(`${item} added to wishlist!`);
-    }
-    AOS.init();
-  </script>
+  <script>AOS.init();</script>
 </body>
 </html>
