@@ -23,8 +23,8 @@
       <h1 class="text-2xl font-extrabold tracking-tight text-gray-800">99,49 Store</h1>
       <input type="text" placeholder="Search products..." class="w-1/2 px-4 py-2 border border-gray-300 rounded-full text-sm focus:outline-none focus:ring focus:border-blue-400" />
       <div class="flex items-center space-x-4">
-        <a href="#login" class="text-sm hover:text-blue-600">Login</a>
-        <a href="#cart" class="text-sm hover:text-blue-600">Cart 🛒</a>
+        <a href="#wishlist" class="text-sm hover:text-pink-600">Wishlist ❤️</a>
+        <a href="#cart" class="text-sm hover:text-blue-600">Cart 🛒 (<span id="cart-count">0</span>)</a>
       </div>
     </div>
   </header>
@@ -60,6 +60,10 @@
         <p class="text-sm text-gray-500">Soft, breathable, modern fit</p>
         <p class="mt-2 font-bold text-green-700">₹99</p>
         <p class="text-yellow-500 text-sm">⭐ 4.6 (320)</p>
+        <div class="flex gap-2 mt-3">
+          <button onclick="addToCart('Cotton T-shirt')" class="text-sm bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700">Add to Cart</button>
+          <button onclick="addToWishlist('Cotton T-shirt')" class="text-sm bg-gray-700 text-white px-3 py-1 rounded-full hover:bg-gray-800">♡ Wishlist</button>
+        </div>
       </div>
     </div>
     <div class="bg-white rounded-lg shadow hover:shadow-lg hover-zoom" data-aos="fade-up" data-aos-delay="100">
@@ -70,6 +74,10 @@
         <p class="text-sm text-gray-500">Leak-proof. Travel friendly.</p>
         <p class="mt-2 font-bold text-green-700">₹149</p>
         <p class="text-yellow-500 text-sm">⭐ 4.8 (412)</p>
+        <div class="flex gap-2 mt-3">
+          <button onclick="addToCart('Steel Bottle')" class="text-sm bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700">Add to Cart</button>
+          <button onclick="addToWishlist('Steel Bottle')" class="text-sm bg-gray-700 text-white px-3 py-1 rounded-full hover:bg-gray-800">♡ Wishlist</button>
+        </div>
       </div>
     </div>
   </section>
@@ -92,6 +100,18 @@
     <p>© 2025 99,49 Store. All rights reserved. Crafted by MidowWebCreater</p>
   </footer>
 
-  <script>AOS.init();</script>
+  <!-- JS: Cart + Wishlist logic -->
+  <script>
+    let cartCount = 0;
+    function addToCart(item) {
+      cartCount++;
+      document.getElementById('cart-count').innerText = cartCount;
+      alert(`${item} added to cart!`);
+    }
+    function addToWishlist(item) {
+      alert(`${item} added to wishlist!`);
+    }
+    AOS.init();
+  </script>
 </body>
 </html>
