@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wishlist - 99Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <div class="bg-pink-600 text-white text-xl font-bold p-4">❤️ My Wishlist - 99Shop</div>
+  <div class="p-4" id="wishlist-items"></div>
+
+  <script>
+    const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    const wishlistItems = document.getElementById("wishlist-items");
+
+    if (wishlist.length === 0) {
+      wishlistItems.innerHTML = "<p class='text-center text-gray-500 mt-10'>No items in wishlist.</p>";
+    } else {
+      wishlist.forEach((item, index) => {
+        wishlistItems.innerHTML += `
+          <div class="bg-white p-4 mb-4 shadow rounded relative">
+            <img src="${item.image}" class="w-full h-40 object-cover mb-2 rounded" />
+            <h3 class="text-lg font-semibold">${item.title}</h3>
+            <p class="text-red-600 font-bold">₹${item.price}</p>
+            <p class="text-sm text-gray-500">${item.description}</p>
+            <button onclick="removeFromWishlist(${index})" class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 text-xs rounded">Remove</button>
+          </div>
+        `;
+      });
+    }
+
+    function removeFromWishlist(index) {
+      wishlist.splice(index, 1);
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
+      location.reload();
+    }
+  </script>
+
+</body>
+</html>
