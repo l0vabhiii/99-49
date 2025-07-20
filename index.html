@@ -15,9 +15,11 @@
   <!-- Header -->
   <header class="bg-white shadow-md p-4 flex justify-between items-center">
     <h1 class="text-xl font-bold text-red-600">99Shop</h1>
-    <div>
-      <button class="mr-4">🛒 Cart</button>
-      <button>🔐 Login</button>
+    <div class="space-x-3 text-sm">
+      <a href="cart.html" class="px-3 py-1 bg-green-600 text-white rounded">Cart</a>
+      <a href="wishlist.html" class="px-3 py-1 bg-pink-500 text-white rounded">Wishlist</a>
+      <a href="login.html" class="px-3 py-1 border border-red-600 text-red-600 rounded">Login</a>
+      <a href="signup.html" class="px-3 py-1 bg-red-600 text-white rounded">Sign Up</a>
     </div>
   </header>
 
@@ -38,7 +40,7 @@
     © 2025 99Shop. All rights reserved.
   </footer>
 
-  <!-- Firebase SDKs -->
+  <!-- Firebase SDKs + Product Loader -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
     import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
@@ -69,12 +71,30 @@
           <h4 class="mt-2 font-semibold">${data.title}</h4>
           <p class="text-sm text-gray-600 mb-1">${data.description}</p>
           <p class="font-bold text-red-600">₹${data.price}</p>
+          <div class="mt-2 flex gap-2">
+            <button onclick='addToCart(${JSON.stringify(data)})' class="text-sm text-white bg-green-600 px-2 py-1 rounded">Add to Cart</button>
+            <button onclick='addToWishlist(${JSON.stringify(data)})' class="text-sm text-white bg-pink-500 px-2 py-1 rounded">Wishlist</button>
+          </div>
         `;
         productList.appendChild(card);
       });
     }
 
     loadProducts();
+
+    window.addToCart = function(product) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push(product);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("Added to cart!");
+    };
+
+    window.addToWishlist = function(product) {
+      let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+      wishlist.push(product);
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
+      alert("Added to wishlist!");
+    };
   </script>
 </body>
 </html>
